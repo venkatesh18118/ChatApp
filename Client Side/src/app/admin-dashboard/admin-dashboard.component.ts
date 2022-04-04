@@ -53,7 +53,7 @@ export class AdminDashboardComponent implements OnInit {
       })
   }
   individualRoom(item){
-    this.http.delete(`https://fyp-chat-app.herokuapp.com/${item._id}`).subscribe(
+    this.http.delete(`https://fyp-chat-app.herokuapp.com/chatRoom/${item._id}`).subscribe(
       res => {
         this.getChatRoom();
       },
