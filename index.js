@@ -16,7 +16,7 @@ const app = express();
 
 
 app.use(bodyParser.json());
-app.use(cors({ origin: '*', }));
+app.use(cors({ origin: '*'}));
 
 app.get('/', (req, res) => {
     res.send("It's Working");
@@ -35,7 +35,7 @@ const server = app.listen(process.env.PORT || 3000, () => console.log(`Server is
 
 const io = require("socket.io")(server, {
     cors: {
-        origin: "*",
+        origin: "*"
     }
 })
 
