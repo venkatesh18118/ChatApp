@@ -15,7 +15,7 @@ export class WebSocketService {
   constructor(private chatroomService: ChatroomService,private http: HttpClient, private router: Router) { 
   }
   
-  public socket =  io('http://localhost:3000', {
+  public socket =  io('https://fyp-chat-app.herokuapp.com', {
     query:{
       id:localStorage.getItem('user_id'),
     }
@@ -62,11 +62,11 @@ export class WebSocketService {
     })
   }
   getAllMessagesfromRoom(){
-   return this.http.get(`http://localhost:3000/chatroomMessages/${this.chatroomService.roomId}`);
+   return this.http.get(`https://fyp-chat-app.herokuapp.com/chatroomMessages/${this.chatroomService.roomId}`);
   }
 
   getAnnouncementMessages(){
-    return this.http.get('http://localhost:3000/announcementMessages');
+    return this.http.get('https://fyp-chat-app.herokuapp.com/announcementMessages');
   }
   
   // this.socket.once('chatroomMessage',(data:any) => {

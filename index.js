@@ -16,7 +16,7 @@ const app = express();
 
 
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:4200', }));
+app.use(cors({ origin: '*', }));
 
 app.get('/', (req, res) => {
     res.send("It's Working");

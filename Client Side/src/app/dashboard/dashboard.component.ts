@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   }
 
   async getChatRoom(){
-    await this.http.get('http://localhost:3000/chatRoom').subscribe(
+    await this.http.get('https://fyp-chat-app.herokuapp.com/chatRoom').subscribe(
       res => {
         this.roomArray = res;
       },

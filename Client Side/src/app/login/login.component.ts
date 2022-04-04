@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   async loginDetails(){
     if(this.loginForm.valid){
-      const val = this.http.post('http://localhost:3000/login',this.loginForm.value).subscribe(
+      const val = this.http.post('https://fyp-chat-app.herokuapp.com/login',this.loginForm.value).subscribe(
         async res => {
           const response = Object.entries(res);
           const token = response[0][1];

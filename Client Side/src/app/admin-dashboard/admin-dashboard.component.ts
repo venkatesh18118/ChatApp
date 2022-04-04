@@ -26,7 +26,7 @@ export class AdminDashboardComponent implements OnInit {
 
   async addChatroom(){
     if(this.chatRoomForm.valid){
-      await this.http.post('http://localhost:3000/chatRoom',this.chatRoomForm.value).subscribe(
+      await this.http.post('https://fyp-chat-app.herokuapp.com/chatRoom',this.chatRoomForm.value).subscribe(
         async res => {
           await this.getChatRoom();
         },
@@ -40,7 +40,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   async getChatRoom(){
-    await this.http.get('http://localhost:3000/chatRoom').subscribe(
+    await this.http.get('https://fyp-chat-app.herokuapp.com/chatRoom').subscribe(
       res => {
         this.roomArray = res;
       },
@@ -53,7 +53,7 @@ export class AdminDashboardComponent implements OnInit {
       })
   }
   individualRoom(item){
-    this.http.delete(`http://localhost:3000/chatRoom/${item._id}`).subscribe(
+    this.http.delete(`https://fyp-chat-app.herokuapp.com/${item._id}`).subscribe(
       res => {
         this.getChatRoom();
       },

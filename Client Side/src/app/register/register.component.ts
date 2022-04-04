@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
 
   async registerDetails(){
     if(this.registerForm.valid){
-      this.http.post('http://localhost:3000/signup',this.registerForm.value).subscribe(
+      this.http.post('https://fyp-chat-app.herokuapp.com/signup',this.registerForm.value).subscribe(
         async res => {
           const response = Object.entries(res);
           const token = response[0][1];
