@@ -29,13 +29,13 @@ app.use('/chatroomMessages', chatRoomMessageController);
 app.use('/userDetails', userDetailsController);
 app.use('/announcementMessages',announcementMessageController);
 
-const server = app.listen(3000, () => console.log('Server is running at 3000'));
+const server = app.listen(process.env.PORT || 3000, () => console.log(`Server is running at ${process.env.PORT || 3000}`));
 
 //const io = require('socket.io')(server);
 
 const io = require("socket.io")(server, {
     cors: {
-        origin: "http://localhost:4200",
+        origin: "*",
     }
 })
 
