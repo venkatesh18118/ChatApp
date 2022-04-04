@@ -22,6 +22,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,
     multi:true
-  }],
+  },{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
