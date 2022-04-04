@@ -1,0 +1,31 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-lg-9">
+            <h1 style="text-align: center; text-decoration: underline;">{{this.chatroomService.roomName}}</h1>
+        </div>
+        <div class="col-lg-3">
+            <button mat-raised-button (click)="leaveRoom()">Leave Room</button>
+        </div>
+    </div>
+
+    <div class="row offset-lg-2 col-lg-9">
+        <div *ngFor="let item of itemArray; let i=index">
+            <p> <span style="color: green;"><b>{{item.name}}</b> </span> : {{item.message}} </p>
+        </div>
+    </div>
+    
+    
+    <div class="row offset-lg-2 col-lg-9">
+        <div class="col-lg-7">
+            <mat-form-field class="col-lg-9">
+                <input matInput  [(ngModel)]="message">
+            </mat-form-field>
+            
+        </div>
+        <div class="col-lg-2">
+            <button mat-raised-button (click)="sendingMessage()">Send</button>
+        </div>
+        
+    </div>
+</div>
