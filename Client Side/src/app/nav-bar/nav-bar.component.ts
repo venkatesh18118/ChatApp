@@ -16,12 +16,5 @@ export class NavBarComponent implements OnInit {
   logoutUser(){
     this.authService.logOutuser();
   }
-  redirectToAdmin(){
-    this.adminLogin = true;
-    this.router.navigate(['/admin/login']);
-  }
-  redirectToUser(){
-    this.adminLogin = false;
-    this.router.navigate(['/login']);
-  }
+  
 }

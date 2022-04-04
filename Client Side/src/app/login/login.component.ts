@@ -53,6 +53,10 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/register']);
   }
 
+  redirectToAdmin(){
+    this.router.navigate(['/admin/login']);
+  }
+
   // async communication(){
   //   const socket = await io('http://localhost:3000', {
   //     query:{
