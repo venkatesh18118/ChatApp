@@ -9,7 +9,7 @@ import {AuthService} from './../auth.service';
 })
 export class NavBarComponent implements OnInit {
   constructor(public authService: AuthService , private router: Router) { }
-
+  adminLogin: boolean = false;
   ngOnInit(): void {
     
   }
@@ -17,6 +17,11 @@ export class NavBarComponent implements OnInit {
     this.authService.logOutuser();
   }
   redirectToAdmin(){
+    this.adminLogin = true;
     this.router.navigate(['/admin/login']);
+  }
+  redirectToUser(){
+    this.adminLogin = false;
+    this.router.navigate(['/login']);
   }
 }
