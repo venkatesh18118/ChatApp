@@ -105,6 +105,16 @@ io.on('connection', (socket) => {
         
     })
 
+    socket.on('video-call',(roomId,userId) => {
+        socket.join(roomId);
+        io.to(roomId).emit('user-connected',userId);
+    })
+
+    socket.on('videocall-disconnect',(roomId,userId) => {
+        console.log('Room is '+ roomId);
+        io.to(roomId).emit('user-disconnected',userId);
+    })
+
     // socket.on("chatroomMessage",({chatroomId,message})=> {
     //     console.log(chatroomId + " " +message);
     //     if(message.trim().length > 0){
