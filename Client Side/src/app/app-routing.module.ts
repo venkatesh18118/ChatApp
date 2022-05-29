@@ -7,6 +7,7 @@ import { ChatroomComponent } from './chatroom/chatroom.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { VideochatComponent } from './videochat/videochat.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch: 'full'},
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path:'admin/dashboard', component:AdminDashboardComponent},
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   {path:'chatroom/:id', component: ChatroomComponent, canActivate:[AuthGuard]},
-  
+  {path:'videocall/:id',component: VideochatComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

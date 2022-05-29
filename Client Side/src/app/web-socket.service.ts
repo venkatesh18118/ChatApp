@@ -61,6 +61,29 @@ export class WebSocketService {
       message:message
     })
   }
+
+  videoCallJoining(id){
+    this.socket.emit('video-call', this.chatroomService.roomId, id)
+  }
+
+  async leaveVideoCall(){
+    await this.socket.emit('videocall-disconnect',this.chatroomService.roomId,localStorage.getItem('user_id'))
+  }
+
+  userDisconnected(){
+    const observable = new Observable<any>
+    (observer => {
+      this.socket.on('user-disconnected', (data) => {
+        observer.next(data);
+        console.log(data + '??');
+      });
+      return () => {
+        this.socket.disconnect();
+      };
+    });
+    return observable;
+  }
+
   getAllMessagesfromRoom(){
    return this.http.get(`https://fyp-chat-app.herokuapp.com/chatroomMessages/${this.chatroomService.roomId}`);
   }

@@ -34,9 +34,6 @@ export class ChatroomComponent implements OnInit {
     await this.chatroomService.getChatroomName();
     await this.chatRoomConversations();
   }
-  ngOnDestroy(): void {
-    this.webSocket.leaveRoom();
-  }
   
   sendingMessage(){
     if(this.message!=""){
@@ -70,5 +67,9 @@ export class ChatroomComponent implements OnInit {
   
   leaveRoom(){
     this.router.navigate(['/dashboard']);
+  }
+
+  videoCall(){
+    this.router.navigate(['/videocall',this.chatroomService.roomId]);
   }
 }
