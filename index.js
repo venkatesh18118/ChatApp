@@ -29,13 +29,13 @@ app.use('/chatroomMessages', chatRoomMessageController);
 app.use('/userDetails', userDetailsController);
 app.use('/announcementMessages',announcementMessageController);
 
-var ExpressPeerServer = require("peer").ExpressPeerServer;    
-var options = {
-  debug: true,
-  allow_discovery: true,
-};
-let peerServer = ExpressPeerServer(server, options);
-app.use("/peerjs", peerServer);
+// var ExpressPeerServer = require("peer").ExpressPeerServer;    
+// var options = {
+//   debug: true,
+//   allow_discovery: true,
+// };
+// let peerServer = ExpressPeerServer(server, options);
+// app.use("/peerjs", peerServer);
 
 const server = app.listen(process.env.PORT || 3000, () => console.log(`Server is running at ${process.env.PORT || 3000}`));
 
