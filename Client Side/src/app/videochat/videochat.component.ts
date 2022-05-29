@@ -35,8 +35,7 @@ export class VideochatComponent implements OnInit {
     this.myPeer = new Peer(this.chatRoom.loginId, {
       secure: true, 
       host: 'fyp-chat-app.herokuapp.com', 
-      port: "",
-      path: "/peerjs",
+      port: 443,
     })
 
     this.myPeer.on('open', id => {
