@@ -1,6 +1,7 @@
 <nav class="navbar sticky-top" style="background-color: black;">
     <div class="container">
         <Span>CHAT APP</Span>
+        <button style="float: right;" (click)="mentorBot()" *ngIf="this.authService.loggedIn()"  mat-raised-button>Mentor</button>
         <button style="float: right;" (click)="logoutUser()" *ngIf="this.authService.loggedIn()"  mat-raised-button>Log Out</button>
     </div>
     

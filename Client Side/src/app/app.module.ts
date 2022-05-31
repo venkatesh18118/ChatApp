@@ -24,6 +24,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { VideochatComponent } from './videochat/videochat.component';
+import { MentorbotComponent } from './mentorbot/mentorbot.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { VideochatComponent } from './videochat/videochat.component';
     AdminDashboardComponent,
     AnnouncementComponent,
     NavBarComponent,
-    VideochatComponent
+    VideochatComponent,
+    MentorbotComponent
   ],
   imports: [
     BrowserModule,

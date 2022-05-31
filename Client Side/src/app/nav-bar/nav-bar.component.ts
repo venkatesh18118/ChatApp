@@ -17,4 +17,7 @@ export class NavBarComponent implements OnInit {
     this.authService.logOutuser();
   }
   
+  mentorBot(){
+    this.router.navigate(['/mentor-bot']);
+  }
 }
